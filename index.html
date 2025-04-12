@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telugu AI Voice Generator</title>
+</head>
+<body>
+    <h1>Telugu AI Voice Generator</h1>
+    
+    <form method="post">
+        <label for="description">Enter text:</label>
+        <textarea name="description" required></textarea><br>
+        <button type="submit">Generate Voice</button>
+    </form>
+
+    {% if audio_generated %}
+        <h3>Generated Audio:</h3>
+        <audio controls>
+            <source src="{{ audio_path }}" type="audio/mp3">
+        </audio>
+        <br>
+        <a href="/download">Download Audio</a>
+    {% endif %}
+</body>
+</html>
